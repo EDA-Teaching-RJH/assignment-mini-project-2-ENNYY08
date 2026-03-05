@@ -34,3 +34,17 @@ def get_round():
                 print("Enter a number between 1 and 10.")
         except:
             print("You have entered an Invalid input. Enter a Number")
+
+def opponent(): 
+    print("Who would you like to compete against?")
+    print("2. Computer")
+    print("3. Another Player")
+
+    choice = input ("Enter 2 or 3: ")
+
+    if choice == "2":
+        computer()
+    else:
+        choice == "3":
+        two_player()
+    
