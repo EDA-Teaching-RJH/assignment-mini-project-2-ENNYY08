@@ -191,7 +191,3 @@ def opponent():
     print("3. Another Player")
 
     choice = input ("Enter 2 or 3: ")
-
-
-
-
