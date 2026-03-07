@@ -66,9 +66,9 @@ def view_score():
     try:
         with  open("score.csv", "r") as file:
             reader = csv.reader(file)
-            print("\nSaved Score")
+            print("\n Score Leadboard")
             for row in reader:
-                print(row[0], "-", row[1])
+                print("Name:", row[0], "|  Score:", row[1])
 
     except: 
         print("No score saved.")
