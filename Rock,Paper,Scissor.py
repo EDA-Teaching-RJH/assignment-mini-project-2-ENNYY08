@@ -24,6 +24,32 @@ def get_rounds():
     while not re.fullmatch("10[1-9]", rounds):
         print("Enter a number between 1 and 10.")
         rounds = input("How many Rounds (1-10)")
+
+
+# The way the rock paper scissors game will work 
+
+def get_choice(player):
+    choice = input(player.name + " choose Rock, Paper or Scissors: ")
+
+    while choice not in ["Rock", "Paper", "Scissors"]:
+        print("Invalid choice.")
+        choice = input ("Choose rock, paper or scissors: ")
+
+        return choice
+    
+def check_winner(c1, c2):
+    
+    if c1 == c2:
+        return 0
+    
+    if (c1 == "rock" and c2 == "scissors") or \
+        (c1 == "paper"" and c2 == "rock") or \
+         (c1 == "scissors" and c2 == "paper"):
+
+       return 1 
+
+    return 2 
+
 # A list to store the player name and score 
 
 player_scores = []
