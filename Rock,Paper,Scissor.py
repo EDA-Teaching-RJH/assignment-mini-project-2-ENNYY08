@@ -37,14 +37,17 @@ def get_choice(player):
 
         return choice
     
+def computer_choice(): 
+    return random.choice(["rock", "paper", "scissors"])
+    
 def check_winner(c1, c2):
     
     if c1 == c2:
         return 0
     
     if (c1 == "rock" and c2 == "scissors") or \
-        (c1 == "paper"" and c2 == "rock") or \
-         (c1 == "scissors" and c2 == "paper"):
+       (c1 == "paper"" and c2 == "rock") or \
+       (c1 == "scissors" and c2 == "paper"):
 
        return 1 
 
