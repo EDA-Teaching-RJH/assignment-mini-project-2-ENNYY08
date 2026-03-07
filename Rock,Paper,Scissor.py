@@ -1,4 +1,6 @@
 import random 
+import csv
+import re
 # A list to store the player name and score 
 
 player_scores = []
@@ -42,9 +44,6 @@ def opponent():
 
     choice = input ("Enter 2 or 3: ")
 
-    if choice == "2":
-        computer()
-    else:
-        choice == "3":
-        two_player()
-    
+
+
+
