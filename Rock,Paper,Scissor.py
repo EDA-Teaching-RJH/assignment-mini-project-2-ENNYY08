@@ -117,7 +117,37 @@ def play_vs_computer ():
     print("\nFinal score:", player.score)
     save_score(player.name, player.score)
 
+# Rocke, Paper, Scissors two players
 
+def play_two_player():
+    name1 = get_player_name()
+    name2 = get_player_name()
+
+    player1 = Player(name1)
+    player2 = Player(name2)
+    rounds = get_rounds()
+
+    for i in range(rounds):
+        print("\nRound", i + 1)
+        c1 = get_choice(player1)
+        c2 = get_choice(player2)
+        result = check_winner(c1,c2)
+        
+        if result == 1:
+            player1.score += 1
+            print(name1, "WINS!")
+        elif result == 2:
+            player2.score += 1
+            print(name2, "WINS!")
+        else:
+            print("Tie!")
+    
+    print("\nFinal Scores")
+    print(name1, player1.score)
+    print(name2, player2.score)
+
+    save_score(name1, player1.score)
+    save_score(name2, player2.score)
 
 # A list to store the player name and score 
 
