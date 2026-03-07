@@ -46,12 +46,51 @@ def check_winner(c1, c2):
         return 0
     
     if (c1 == "rock" and c2 == "scissors") or \
-       (c1 == "paper"" and c2 == "rock") or \
+       (c1 == "paper" and c2 == "rock") or \
        (c1 == "scissors" and c2 == "paper"):
 
        return 1 
 
     return 2 
+
+# Creat a function that save view and remove score from the file
+
+def save_score(name, score):
+
+    with open("score.csv", "a", newline="") as file:
+        writer = csv.writer(file)
+        writer. writerow([name,score])
+
+def view_score():
+
+    try:
+        with  open("score.csv", "r") as file:
+            reader = csv.reader(file)
+            print("\nSaved Score")
+            for row in reader:
+                print(row[0], "-", row[1])
+
+    except: 
+        print("No score saved.")
+
+def remove_score():
+    name = input("Enter name to remove: ")
+    rows = []
+    try: 
+    
+        with open ("score.csv", "r") as file: 
+            reader = csv. reader(file)
+        for row in reader:
+            if row[0] != name:
+                rows.append(row)
+        with open("score.csv", "w") as file:
+            writer = csv. writer(file)
+            writer.writerows(rows)
+        print("Player removed if existed.")
+    except:
+        print("File not found.")
+
+
 
 # A list to store the player name and score 
 
