@@ -1,6 +1,29 @@
 import random 
 import csv
 import re
+#Validation 
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.score = 0
+
+
+def get_player_name():
+    name = input("Enter player name: ")
+
+    while not re.fullmatch("[A-Za-z]+", name):
+        print("Invalid name, Use letters only.")
+        name = input("ENTER PLAYER NAME:")
+
+        return name 
+    
+
+def get_rounds():
+    rounds = input("How many rounds(1-10): ")
+
+    while not re.fullmatch("10[1-9]", rounds):
+        print("Enter a number between 1 and 10.")
+        rounds = input("How many Rounds (1-10)")
 # A list to store the player name and score 
 
 player_scores = []
