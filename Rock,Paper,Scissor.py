@@ -91,6 +91,33 @@ def remove_score():
         print("File not found.")
 
 
+# Rock, Paper, Scissors between player vs computer 
+
+def play_vs_computer ():
+    name = get_player_name()
+    
+    player = Player(name)
+    rounds = get_round()
+    
+    for i in range(rounds):
+        print("\nRound, i + 1")
+
+        player_choice = get_choice(player)
+        comp_choice= computer_choice()
+        print("Computer chose:", comp_choice)
+        result = check_winner(player_choice, comp_choice)
+
+        if result == 1:
+            player.score += 1
+            print("You win!")
+        elif result == 2: 
+            print("Computer wins!")
+        else:
+            print("Tie!")
+    print("\nFinal score:", player.score)
+    save_score(player.name, player.score)
+
+
 
 # A list to store the player name and score 
 
