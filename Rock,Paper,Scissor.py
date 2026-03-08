@@ -25,6 +25,7 @@ def get_rounds():
         print("Enter a number between 1 and 10.")
         rounds = input("How many Rounds (1-10)")
 
+        return int(rounds) 
 
 # The way the rock paper scissors game will work 
 
