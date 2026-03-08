@@ -161,7 +161,7 @@ def get_round():
             print("You have entered an Invalid input. Enter a Number")
 
 # Get the player to chose who to play aganist 
-def opponent(): 
+def choose_opponent(): 
     print("Who would you like to compete against?")
     print("1. Computer")
     print("2. Another Player")
@@ -188,7 +188,7 @@ def main():
       choice = input("Choose Option: ")
 
       if choice == "1":
-          opponent = opponent()
+          opponent = choose_opponent()
           if opponent == "1":
               play_vs_computer()
           else:
