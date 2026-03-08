@@ -97,7 +97,7 @@ def play_vs_computer ():
     name = get_player_name()
     
     player = Player(name)
-    rounds = get_round()
+    rounds = get_rounds()
     
     for i in range(rounds):
         print("\nRound, i + 1")
@@ -148,17 +148,6 @@ def play_two_player():
 
     save_score(name1, player1.score)
     save_score(name2, player2.score)
-
-def get_round(): 
-    while True: 
-        try: 
-            rounds = int(input("How many rounds? (1-10):"))
-            if 1<= round >=10:
-                return rounds
-            else:
-                print("Enter a number between 1 and 10.")
-        except:
-            print("You have entered an Invalid input. Enter a Number")
 
 # Get the player to chose who to play aganist 
 def choose_opponent(): 
