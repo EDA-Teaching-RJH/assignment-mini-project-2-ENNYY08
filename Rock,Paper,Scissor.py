@@ -10,33 +10,28 @@ class Player:
 
 def get_player_name():
     name = input("Enter player name: ")
-
-    while not re.fullmatch("[A-Za-z]+", name):
-        print("Invalid name, Use letters only.")
-        name = input("ENTER PLAYER NAME:")
-
-        return name 
+    return name 
     
 
 def get_rounds():
     rounds = input("How many rounds(1-10): ")
 
-    while not re.fullmatch("10[1-9]", rounds):
+    while not re.fullmatch("10|[1-9]", rounds):
         print("Enter a number between 1 and 10.")
         rounds = input("How many Rounds (1-10)")
 
-        return int(rounds) 
+    return int(rounds) 
 
 # The way the rock paper scissors game will work 
 
 def get_choice(player):
-    choice = input(player.name + " choose Rock, Paper or Scissors: ")
+    choice = input(player.name + " choose rock, paper or scissors: ").lower()
 
-    while choice not in ["Rock", "Paper", "Scissors"]:
+    while choice not in ["rock", "paper", "scissors"]:
         print("Invalid choice.")
-        choice = input ("Choose rock, paper or scissors: ")
+        choice = input ("Choose rock, paper or scissors: ").lower()
 
-        return choice
+    return choice
     
 def computer_choice(): 
     return random.choice(["rock", "paper", "scissors"])
@@ -78,12 +73,12 @@ def remove_score():
     name = input("Enter name to remove: ")
     rows = []
     try: 
-    
         with open ("score.csv", "r") as file: 
             reader = csv. reader(file)
-        for row in reader:
-            if row[0] != name:
-                rows.append(row)
+            for row in reader:
+                if row[0] != name:
+                    rows.append(row)
+
         with open("score.csv", "w") as file:
             writer = csv. writer(file)
             writer.writerows(rows)
@@ -101,7 +96,7 @@ def play_vs_computer ():
     rounds = get_rounds()
     
     for i in range(rounds):
-        print("\nRound, i + 1")
+        print("\nRound", i + 1)
 
         player_choice = get_choice(player)
         comp_choice= computer_choice()
@@ -162,7 +157,7 @@ def choose_opponent():
         print("Invalid choice")
         choice = input("Enter 1 or 2: ")
 
-        return choice 
+    return choice 
 # A meun option to the different components of the game
 
 def main():
