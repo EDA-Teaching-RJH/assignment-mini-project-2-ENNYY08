@@ -175,25 +175,35 @@ def opponent():
         return choice 
 # A meun option to the different components of the game
 
-def display_meun():
-    print("\n=== ROCK PAPER SCISSORS ====")
-    print("1. Play Game")
-    print("2. Computer vs Player")
-    print("3. Two players")
-    print("4. View score")
-    print("5. Remove Player Records")
-    print("6. Exit")
+def main():
 
-    return input("Select an option: ")
-
-def get_round(): 
     while True: 
-        try: 
-            rounds = int(input("How many rounds? (1-10):"))
-            if 1<= round >=10:
-                return rounds
-            else:
-                print("Enter a number between 1 and 10.")
-        except:
-            print("You have entered an Invalid input. Enter a Number")  
 
+      print("\n=== ROCK PAPER SCISSORS ====")
+      print("1. Play Game")
+      print("2. View Scores")
+      print("3. Remove Player Score")
+      print("4. Exit")
+      
+      choice = input("Choose Option: ")
+
+      if choice == "1":
+          opponent = opponent()
+          if opponent == "1":
+              play_vs_computer()
+          else:
+              play_two_player()
+      elif choice == "2":
+          view_score()
+      elif choice == "3":
+          remove_score()
+      elif choice == "4":
+          print("Goodbye")
+          break 
+      
+      else:
+          print("Invalid option")
+
+
+main() 
+ 
