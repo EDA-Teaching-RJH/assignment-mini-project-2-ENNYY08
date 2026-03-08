@@ -149,11 +149,30 @@ def play_two_player():
     save_score(name1, player1.score)
     save_score(name2, player2.score)
 
-# A list to store the player name and score 
+def get_round(): 
+    while True: 
+        try: 
+            rounds = int(input("How many rounds? (1-10):"))
+            if 1<= round >=10:
+                return rounds
+            else:
+                print("Enter a number between 1 and 10.")
+        except:
+            print("You have entered an Invalid input. Enter a Number")
 
-player_scores = []
-player_names = []
+# Get the player to chose who to play aganist 
+def opponent(): 
+    print("Who would you like to compete against?")
+    print("1. Computer")
+    print("2. Another Player")
 
+    choice = input ("Enter 1 or 2: ")
+
+    while choice != "1" and choice != "2":
+        print("Invalid choice")
+        choice = input("Enter 1 or 2: ")
+
+        return choice 
 # A meun option to the different components of the game
 
 def display_meun():
@@ -166,13 +185,6 @@ def display_meun():
     print("6. Exit")
 
     return input("Select an option: ")
-    
-# Welcome Player to the game, have them introduce themesleve, and pick who they will like to play aganist and how many rounds 
-
-def play_game(): 
-    name = input("Enter your name")
-    print("Welcome", name + "!")
-    print("You are Player 1.")
 
 def get_round(): 
     while True: 
@@ -183,11 +195,5 @@ def get_round():
             else:
                 print("Enter a number between 1 and 10.")
         except:
-            print("You have entered an Invalid input. Enter a Number")
+            print("You have entered an Invalid input. Enter a Number")  
 
-def opponent(): 
-    print("Who would you like to compete against?")
-    print("2. Computer")
-    print("3. Another Player")
-
-    choice = input ("Enter 2 or 3: ")
